@@ -1,0 +1,434 @@
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #f5f6fa;
+  background: #080b11;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #080b11;
+}
+
+/* Левая панель */
+
+.sidebar {
+  width: 420px;
+  flex-shrink: 0;
+  background: #101a30;
+  z-index: 1000;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #33415c transparent;
+}
+
+.hero {
+  height: 210px;
+  position: relative;
+  background:
+    linear-gradient(
+      0deg,
+      #101a30 0%,
+      rgba(16, 26, 48, .25) 70%
+    ),
+    url("/hero.jpg") center / cover,
+    #2c3547;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  right: 20px;
+}
+
+.hero-meta {
+  font-size: 12px;
+  color: #e2e8f0;
+}
+
+.hero h1 {
+  font-size: 23px;
+  margin: 9px 0 0;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px #0008;
+}
+
+.close-sidebar,
+.popup-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: none;
+  background: #1b2434c9;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 22px;
+  z-index: 2;
+}
+
+.sidebar-content {
+  padding: 22px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.action-buttons button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: #6055f6;
+}
+
+.secondary-button {
+  background: #075c50;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tags span {
+  background: #232f64;
+  border: 1px solid #35417a;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #c5d0ff;
+}
+
+.info-section {
+  background: #1d283e;
+  border: 1px solid #2c3951;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #c9d4e5;
+  letter-spacing: .5px;
+}
+
+.section-heading > span:first-child {
+  color: #8d89ff;
+  font-size: 16px;
+}
+
+.chevron {
+  margin-left: auto;
+}
+
+.info-section p {
+  color: #e3e9f4;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 14px 0 0;
+}
+
+.article {
+  padding-top: 12px;
+  line-height: 1.85;
+  color: #dce4f0;
+  font-size: 14px;
+}
+
+.article h2 {
+  font-size: 17px;
+  color: white;
+}
+
+/* Карта */
+
+.map-area {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+.world-map {
+  height: 100%;
+  width: 100%;
+  background: #090909;
+  z-index: 1;
+}
+
+.leaflet-container {
+  background: #090909;
+}
+
+.leaflet-interactive {
+  cursor: pointer;
+}
+
+.top-controls {
+  position: absolute;
+  top: 28px;
+  right: 24px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-button,
+.period,
+.legend {
+  background: #080b11eb;
+  border: 1px solid #292e37;
+  border-radius: 8px;
+  color: #f4f6fc;
+  padding: 11px 15px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.nav-button {
+  font-size: 22px;
+  padding: 5px 16px;
+}
+
+.legend {
+  background: #14223e;
+  color: #bdcaff;
+}
+
+.map-focus {
+  position: absolute;
+  right: 24px;
+  bottom: 205px;
+  z-index: 500;
+  background: #151c29;
+  border: 1px solid #394358;
+  border-radius: 8px;
+  color: #fff;
+  padding: 12px 16px;
+  box-shadow: 0 3px 15px #0009;
+}
+
+.open-sidebar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1200;
+  border: 1px solid #48516b;
+  color: white;
+  background: #152139;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Белая карточка события */
+
+.event-popup {
+  position: absolute;
+  z-index: 600;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  background: #ffffff;
+  color: #272c37;
+  width: min(410px, calc(100% - 30px));
+  border-radius: 13px;
+  box-shadow: 0 15px 50px #0009;
+  padding: 27px;
+}
+
+.event-popup .popup-close {
+  background: #f0f1f5;
+  color: #333;
+}
+
+.popup-meta {
+  display: flex;
+  gap: 12px;
+  color: #667080;
+  font-size: 12px;
+  margin-bottom: 18px;
+  padding-right: 18px;
+}
+
+.event-popup h2 {
+  font-size: 17px;
+  margin: 0 0 20px;
+}
+
+.event-popup p {
+  color: #565c68;
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.popup-divider {
+  border-top: 1px solid #e7e8ed;
+  margin: 18px 0;
+}
+
+.source-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #8b929e;
+}
+
+/* Нижний таймлайн */
+
+.timeline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  padding: 18px 20px 25px;
+  background: linear-gradient(
+    transparent,
+    rgba(0,0,0,.88) 18%,
+    #08090c 100%
+  );
+}
+
+.timeline-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 11px;
+  color: #a9b2ca;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+.timeline-heading button {
+  border: 0;
+  background: #312a6a;
+  color: #dcd7ff;
+  border-radius: 7px;
+  padding: 8px 12px;
+}
+
+.timeline-cards {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 2px 2px 12px;
+}
+
+.timeline-card {
+  text-align: left;
+  background: #1b1b1de9;
+  border: 1px solid #48484c;
+  border-radius: 11px;
+  min-width: 210px;
+  width: 210px;
+  min-height: 110px;
+  color: white;
+  padding: 14px;
+  transition: .2s;
+}
+
+.timeline-card:hover {
+  background: #292b32;
+  transform: translateY(-3px);
+}
+
+.timeline-card.active {
+  border: 2px solid #7064ff;
+  background: #29294a;
+}
+
+.timeline-card-top {
+  display: flex;
+  justify-content: space-between;
+  color: #adb5c4;
+  font-size: 17px;
+}
+
+.timeline-year {
+  font-size: 18px;
+  font-weight: 800;
+  color: #787e87;
+}
+
+.timeline-card h3 {
+  font-size: 12px;
+  margin: 9px 0 5px;
+}
+
+.timeline-card p {
+  font-size: 10px;
+  color: #aaaeb9;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Мобильные экраны */
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: absolute;
+    width: min(340px, 88vw);
+    box-shadow: 8px 0 35px #0009;
+  }
+
+  .top-controls {
+    top: 14px;
+    right: 12px;
+  }
+
+  .legend {
+    display: none;
+  }
+
+  .event-popup {
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-card {
+    min-width: 175px;
+    width: 175px;
+  }
+
+  .map-focus {
+    bottom: 205px;
+    right: 12px;
+  }
+}
