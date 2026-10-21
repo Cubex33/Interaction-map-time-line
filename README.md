@@ -1,4 +1,4 @@
-# Semey Through the Ages — RU / KZ
+# Semey History — RU / KZ
 
 An interactive historical map of Semey with Russian and Kazakh language interfaces.
 
