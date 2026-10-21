@@ -1,23 +1,23 @@
-# Семей сквозь века — RU / KZ
+# Semey Through the Ages — RU / KZ
 
-Интерактивная историческая карта Семея с русским и казахским интерфейсом.
+An interactive historical map of Semey with Russian and Kazakh language interfaces.
 
-## Запуск
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Изменения карты
+## Map Updates
 
-- Маркеры исторических событий передаются карте независимо от фильтра временной шкалы; временная шкала по-прежнему фильтрует список событий.
-- Кнопка `◎` показывает все отмеченные места и автоматически подбирает масштаб.
-- Кнопка `➤` запрашивает разрешение браузера на геолокацию и строит автомобильный маршрут до выбранного события через маршрутизатор OSRM. Для построения нужны интернет и разрешение на местоположение.
-- Современная 3D-застройка по умолчанию скрыта, чтобы не заслонять реконструируемый объект. Её можно включить кнопкой `▱ / ▥`.
-- Длина схематичной 3D-модели подвесного моста скорректирована до примерно 750 м.
-- События, связанные с Семипалатинским испытательным полигоном, перенесены из центра Семея в приблизительный район полигона.
+- Historical event markers are passed to the map independently of the timeline filter; the timeline continues to filter the list of events.
+- The `◎` button displays all marked locations and automatically adjusts the map zoom to fit them.
+- The `➤` button requests browser permission to access the user's location and builds a driving route to the selected event using the OSRM routing service. An internet connection and location permission are required.
+- Modern 3D buildings are hidden by default to prevent them from obscuring the reconstructed object. They can be enabled using the `▱ / ▥` button.
+- The length of the schematic 3D model of the suspension bridge has been adjusted to approximately 750 m.
+- Events related to the Semipalatinsk Test Site have been moved from the center of Semey to the approximate area of the test site.
 
-## Важно об исторической точности
+## Important Notes on Historical Accuracy
 
-Координаты отдельных ранних или территориальных событий остаются ориентировочными, если доступные источники не подтверждают конкретную точку. 3D-этапы строительства — визуальная реконструкция, а не архивная модель по обмерам. Перед публикацией для каждого объекта желательно добавить проверенный источник координат и отмечать уровень достоверности.
+The coordinates of some early historical events and events covering larger territories remain approximate when available sources do not confirm a specific location. The 3D construction stages are visual reconstructions, not archival models based on original measurements. Before publication, it is recommended to add a verified coordinate source for each object and indicate its level of accuracy.
